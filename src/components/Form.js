@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Popup from "./Popup";
 // import PropTypes from 'prop-types';
 
@@ -28,6 +28,7 @@ export default function Form(props) {
     Village: Village,
   };
 
+
   const onsubmit = (pageNot_reload) => {
     if (
       inputName === "" ||
@@ -39,7 +40,7 @@ export default function Form(props) {
     ) {
       alert("Fill The All Box");
       pageNot_reload.preventDefault();
-    } else if (!/^[a-zA-Z]+$/.test(inputName)) {
+    } else if (!/^[a-zA-Z\s]+$/.test(inputName)) {
       alert("allow only alphabetic characters in name");
       pageNot_reload.preventDefault();
     } else if (inputName.length > 30) {
@@ -89,73 +90,84 @@ export default function Form(props) {
     <>
       {submits ? <Popup mapData={mapData} /> : ""}
       <div className={`${props.FormBlock} mt-5`}></div>
-      <div className={`${closes} w-3/4 mx-auto`}>
-        <form className="bg-yellow-400 wv mx-auto py-8">
-          <label className="block mx-11 font-medium ">Full Name</label>
+      <div className={`${closes} w-[65%] mx-auto `}>
+        <form className="bg-my-custom-color bg-[#13232F] opacity-90 rounded wv mx-auto py-6">
+          <h1 className="w-[100%] px-4 py-1 text-[25px] mb-4 text-white rounded text-center font-semibold mx-auto bg-green-600">Address</h1>
+          <div className="flex justify-center  w-[80%] mx-auto  text-white opacity-90">
+          <div className="">
+          <label className="block text-center font-semibold ">Full Name</label>
           <input
             type="text"
             onChange={(e) => {
               setinputName(e.target.value);
-            }}
-            className={`block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3`}
+            }} placeholder="Full Name" name="inputName" autocomplete="name"
+            className={` mx-auto w-[95%]   bg-my-custom-color bg-[#13232F] border border-gray-light outline-none px-3 py-3`}
           ></input>
+          </div>
+          
+          <div>
 
-          <label className="block mx-11 font-medium ">Mobile Number</label>
+          <label className="block text-center font-semibold  ">Mobile </label>
           <input
             
             minLength={1}
             maxLength={10}
             onChange={(e) => {
               setMobile(e.target.value);
-            }}
-            className="block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3"
+            }} placeholder="Mobile Number"
+            className=" mx-auto w-[95%]  bg-my-custom-color ml-1 bg-[#13232F] border border-gray-light outline-none px-3 py-3"
           ></input>
+          </div>
+        </div>
+        <div className="text-white opacity-90 mt-2">
+        <div className="border-b-2 border-white mt-4 mb-2  w-full"></div>
 
-          <label className="block mx-11 font-medium ">Email Id</label>
+          <label className="block mx-[70px] font-semibold ">Email Id</label>
           <input
             type="email"
             required
             onChange={(e) => {
               setEmail(e.target.value);
-            }}
-            className="block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3"
+            }} placeholder="Email Id"
+            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
           ></input>
 
-          <label className="block mx-11 font-medium ">State</label>
+          <label className="block mx-[70px] font-semibold ">State</label>
           <input
             type="text"
             onChange={(e) => {
               setStates(e.target.value);
-            }}
-            className="block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3"
+            }} placeholder="State"
+            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
           ></input>
 
-          <label className="block mx-11 font-medium ">District</label>
+          <label className="block mx-[70px] font-semibold ">District</label>
           <input
             type="text"
             onChange={(e) => {
               setDistrict(e.target.value);
-            }}
-            className="block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3"
+            }} placeholder="District"
+            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light   outline-none px-3 py-3"
           ></input>
 
-          <label className="block mx-11 font-medium ">Village</label>
+          <label className="block mx-[70px] font-semibold ">Village</label>
           <input
             type="text"
             onChange={(e) => {
               setVillage(e.target.value);
-            }}
-            className="block mx-auto w-[80%]  rounded bg-slate-200 focus:bg-white outline-none px-3 py-3"
+            }} placeholder="Village"
+            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
           ></input>
+          </div>
           <div className="w-36 mx-auto">
           <input
             type="submit"
             onClick={onsubmit}
-            className="py-2 px-10 font-medium  mt-6 bg-green-600 cursor-pointer"
+            className="py-2 px-8 font-semibold text-[25px] text-white rounded mt-6 bg-green-600 cursor-pointer"
           /></div>
           {/* <button
             onClick={onsubmit}
-            className="py-2 px-10 font-medium ml-32 mt-6 bg-green-600"
+            className="py-2 px-10 font-semibold ml-32 mt-6 bg-green-600"
           >
             Submit
           </button> */}
