@@ -6,8 +6,47 @@
 body{
     background-image: url(./components/mail.jpg);
     height: auto;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 .vk{
     box-shadow: 10px 10px 1px  150px rgb(0, 0, 0,0.7);
 }
+.wv{
+    width: 35%;
+}
+@media only screen and (max-width: 1000px) {
+    .wv {
+        width: 40%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .wv {
+        width: 45%;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .wv {
+        width: 50%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .wv {
+        width: 60%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .wv {
+        width: 70%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .wv {
+        width: 80%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .wv {
+        width: 100%;
+    }
+  }
