@@ -91,79 +91,77 @@ export default function Form(props) {
       {submits ? <Popup mapData={mapData} /> : ""}
       <div className={`${props.FormBlock} mt-5`}></div>
       <div className={`${closes} w-[65%] mx-auto `}>
-        <form className="bg-my-custom-color bg-[#13232F] opacity-90 rounded wv mx-auto py-6">
-          <h1 className="w-[100%] px-4 py-1 text-[25px] mb-4 text-white rounded text-center font-semibold mx-auto bg-green-600">Address</h1>
-          <div className="flex justify-center  w-[80%] mx-auto  text-white opacity-90">
-          <div className="">
-          <label className="block text-center font-semibold ">Full Name</label>
-          <input
+        <form className="bg-my-custom-color bg-[#fdfdfd]  rounded wv mx-auto py-6">
+          {/* <h1 className="w-[100%] px-4 py-2 text-[25px] mb-4 text-white rounded text-center font-semibold mx-auto bg-green-600">Address</h1> */}
+          
+          
+          <label className="block ml-[10%] text-[16px] fontF mb-1 antialiased fontF ">Full Name</label>
+          <input 
             type="text"
             onChange={(e) => {
               setinputName(e.target.value);
-            }} placeholder="Full Name" name="inputName" autocomplete="name"
-            className={` mx-auto w-[95%]   bg-my-custom-color bg-[#13232F] border border-gray-light outline-none px-3 py-3`}
+            }} placeholder="Full Name" 
+            className={`block mx-auto w-[80%] text-[16px] fontF  bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500 focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2`}
           ></input>
-          </div>
           
-          <div>
+          
+        
 
-          <label className="block text-center font-semibold  ">Mobile </label>
+          <label className="block ml-[10%] text-[16px] fontF mb-1 mt-1   ">Mobile </label>
           <input
             
             minLength={1}
             maxLength={10}
             onChange={(e) => {
               setMobile(e.target.value);
-            }} placeholder="Mobile Number"
-            className=" mx-auto w-[95%]  bg-my-custom-color ml-1 bg-[#13232F] border border-gray-light outline-none px-3 py-3"
-          ></input>
-          </div>
-        </div>
-        <div className="text-white opacity-90 mt-2">
-        <div className="border-b-2 border-white mt-4 mb-2  w-full"></div>
+            }} placeholder="Mobile"
+            className="block mx-auto w-[80%] text-[16px] fontF bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500 focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2"          ></input>
+          
+        
+       
 
-          <label className="block mx-[70px] font-semibold ">Email Id</label>
+          <label className="block ml-[10%] text-[16px] fontF mb-1 mt-1  ">Email Id</label>
           <input
             type="email"
             required
             onChange={(e) => {
               setEmail(e.target.value);
             }} placeholder="Email Id"
-            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
+            className="block mx-auto w-[80%] text-[16px] fontF bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500 focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2"
           ></input>
 
-          <label className="block mx-[70px] font-semibold ">State</label>
+          <label className="block ml-[10%] text-[16px] fontF mb-1 mt-1  ">State</label>
           <input
             type="text"
             onChange={(e) => {
               setStates(e.target.value);
             }} placeholder="State"
-            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
+            className="block mx-auto w-[80%] text-[16px] fontF bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500 focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2"
           ></input>
 
-          <label className="block mx-[70px] font-semibold ">District</label>
+          <label className="block ml-[10%] text-[16px] fontF mb-1 mt-1  ">District</label>
           <input
             type="text"
             onChange={(e) => {
               setDistrict(e.target.value);
             }} placeholder="District"
-            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light   outline-none px-3 py-3"
+            className="block mx-auto w-[80%] text-[16px] fontF bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500  focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2"
           ></input>
 
-          <label className="block mx-[70px] font-semibold ">Village</label>
+          <label className="block ml-[10%] text-[16px] fontF mb-1 mt-1  ">Village</label>
           <input
             type="text"
             onChange={(e) => {
               setVillage(e.target.value);
             }} placeholder="Village"
-            className="block mx-auto w-[70%]  bg-my-custom-color bg-[#13232F] border border-gray-light  outline-none px-3 py-3"
+            className="block mx-auto w-[80%] text-[16px] fontF bg-my-custom-color bg-[#fdfdfd] rounded border border-gray-light focus:border-green-500 hover:border-green-500 focus:shadow-green-500 focus:drop-shadow-sm outline-none px-4 py-2"
           ></input>
-          </div>
-          <div className="w-36 mx-auto">
+          
+          <div className="w-20 mx-auto">
           <input
             type="submit"
             onClick={onsubmit}
-            className="py-2 px-8 font-semibold text-[25px] text-white rounded mt-6 bg-green-600 cursor-pointer"
+            className="py-1 px-4 font-semibold text-[15px] text-white rounded mt-6 bg-green-600 cursor-pointer"
           /></div>
           {/* <button
             onClick={onsubmit}

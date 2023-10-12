@@ -15,6 +15,14 @@ body{
 .wv{
     width: 50%;
 }
+.fontF{
+  font-family: 'Gabarito', sans-serif;   
+}
+input::placeholder{
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 @media only screen and (max-width: 1000px) {
     .wv {
         width: 50%;
